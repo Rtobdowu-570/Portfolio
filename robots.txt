@@ -1,0 +1,13 @@
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Don't crawl unnecessary folders (if they exist)
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /cgi-bin/
+Disallow: /temp/
+
+# Allow everything else
+Allow: /
+
+
