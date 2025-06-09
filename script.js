@@ -43,3 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection);
   }
 });
+
+
+// Toggle navigation on mobile screen
+const menu = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-list');
+
+// Close nav when a link is clicked or when clicking outside the nav
+function closeNav() {
+  navList.classList.remove('active');
+}
+
+menu.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent body click from firing
+  navList.classList.toggle('active');
+});
+
+// Close menu when a nav link is clicked
+navList.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeNav);
+});
+
+// Close menu when clicking outside nav/menu
+document.body.addEventListener('click', (e) => {
+  if (navList.classList.contains('active') && !navList.contains(e.target) && !menu.contains(e.target)) {
+    closeNav();
+  }
+});
