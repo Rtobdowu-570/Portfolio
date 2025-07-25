@@ -9,13 +9,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/sp.ico" type="image/x-icon" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="radial-gradient-bg"></div>
+    <div class="particles-container" id="particles"></div>
     <header class="header" id="header">
       <nav class="nav-bar">
-        <h1 class="logo">Sleek Developer</h1>
+        <h1 class="logo">PAIN_!X.dev</h1>
         <button class="menu-toggle" type="button" aria-label="Open Menu">
         <i class="fas fa-bars"></i>
         </button>
@@ -31,30 +36,33 @@
     <section class="hero" id="hero">
       <img src="/img/Norton.jpg" alt="Hero Image" class="hero-image" />
       <div class="hero-text">
-        <h2>Frontend Developer & <span class="logo">Startup Founder</span></h2>
+        <h2>Frontend Developer & <span class="logo">Aspiring Entrepreneur</span></h2>
         <p>
-          Passionate about creating beautiful, functional web experiences with
-          HTML , CSS, and JavaScript. Currently building
-          <strong>Sleek</strong> - a platform for developers to share and
-          collaborate on code snippets.
+          With 8 months of dedicated coding experience, I'm passionate about crafting 
+          clean, responsive web applications using HTML, CSS, and JavaScript. 
+          Currently working on <strong>Sleek</strong> - an innovative platform 
+          designed to help developers share code snippets and collaborate more effectively. 
+          Always eager to learn new technologies and take on exciting challenges.
         </p>
-        <a
-          href="mailto:gcah4451@gmail.com"
-          class="contact-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          onclick="window.location.href = 'mailto:gcah4451@gmail.com?subject=Hello&body=I would like to contact you'"
-        >
-          <i class="fas fa-envelope"></i> Contact Me</a
-        >
-        <a
-          href="https://github.com/rtobdowu-570"
-          class="github-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github"></i> View my Github</a
-        >
+        <div class="hero-buttons">
+          <a
+            href="mailto:gcah4451@gmail.com"
+            class="contact-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="window.location.href = 'mailto:gcah4451@gmail.com?subject=Hello&body=I would like to contact you'"
+          >
+            <i class="fas fa-envelope"></i> Contact Me</a
+          >
+          <a
+            href="https://github.com/rtobdowu-570"
+            class="github-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i> View my Github</a
+          >
+        </div>
       </div>
     </section>
 
@@ -63,24 +71,23 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-text" id="about-text">
-            <h3>Developer & Entrepreneur</h3>
+            <h3>Developer & Innovator</h3>
             <p>
-              I'm a frontend developer with 6+ months of experience creating
-              responsive, user-friendly web applications. My expertise lies in
-              vanilla JavaScript, modern CSS techniques, and semantic HTML.
+              I'm a passionate frontend developer with 8 months of hands-on experience 
+              building responsive, accessible web applications. My skill set focuses on 
+              modern JavaScript ES6+, CSS Grid & Flexbox, and semantic HTML5 practices.
             </p>
             <p class="current-project">
-              Currently, I'm working on <strong>Sleek</strong>, a startup that
-              aims to revolutionize how developers share and collaborate on code
-              snippets. The platform has is still under development, but I am
-              excited about its potential to enhance productivity and foster a
-              community of developers.
+              Currently developing <strong>Sleek</strong>, an ambitious project aimed at 
+              transforming how developers share and discover code snippets. This platform 
+              represents my journey from learning fundamentals to creating real-world 
+              solutions that can impact the developer community.
             </p>
             <div class="badges">
-              <span class="badge">Problem Solver</span>
-              <span class="badge">Team Player</span>
-              <span class="badge">Continuous Learner</span>
-              <span class="badge">Startup Mindset</span>
+              <span class="badge">Quick Learner</span>
+              <span class="badge">Detail-Oriented</span>
+              <span class="badge">Growth Mindset</span>
+              <span class="badge">Future Entrepreneur</span>
             </div>
           </div>
           <div class="stats-grid" id="stats-grid">
@@ -91,7 +98,7 @@
             </div>
             <div class="stats-card">
               <i class="fas fa-palette"></i>
-              <h4>6+</h4>
+              <h4>8</h4>
               <p>Months Experience</p>
             </div>
             <div class="stats-card">
@@ -162,33 +169,43 @@
           method="POST"
           class="contact-form" id="contact-form"
         >
-          <label for="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            autocomplete="name"
-          />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your full name"
+              required
+              autocomplete="name"
+            />
+          </div>
 
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="your.email@example.com"
-            required
-            autocomplete="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-          />
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="your.email@example.com"
+              required
+              autocomplete="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
+          </div>
 
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            required
-          ></textarea>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              placeholder="Tell me about your project or just say hello..."
+              required
+            ></textarea>
+          </div>
+          
           <button type="submit" class="submit-button" id="submit" aria-label="Send Message">
-            Send Message
+            <i class="fas fa-paper-plane"></i> Send Message
           </button>
           <div class="feedback"></div>
         </form>
