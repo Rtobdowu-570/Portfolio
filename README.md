@@ -1,6 +1,6 @@
-# Sleek Developer Portfolio
+# †x.dev
 
-Welcome to my personal portfolio website! This project showcases my skills, experience, and projects as a frontend developer and startup founder.
+ Welcome to my personal portfolio website! This project showcases my skills, experience, and projects as a frontend developer and startup founder.
 
 ---
 
