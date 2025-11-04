@@ -8,8 +8,7 @@
 
 This portfolio is designed to highlight my journey as a developer, my current startup project (**Sleek**), and my passion for building beautiful, functional web experiences using HTML, CSS, and JavaScript.
 
-- **Role:** Frontend Developer & Startup Founder
-- **Current Project:** Sleek – a platform for developers to share and collaborate on code snippets.
+- **Role:** Frontend Developer
 
 ---
 
