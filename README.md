@@ -1,64 +1,95 @@
 # Sleek Developer Portfolio
 
-Welcome to my personal portfolio website! This project showcases my skills, experience, and projects as a frontend developer and startup founder.
+Personal portfolio for Fasasi Pamilerin — frontend developer & startup founder.  
+This repo contains a static HTML/CSS/JS portfolio deployed to Vercel.
 
 ---
 
-## 🚀 About
+## Features
 
-This portfolio is designed to highlight my journey as a developer, my current startup project (**Sleek**), and my passion for building beautiful, functional web experiences using HTML, CSS, and JavaScript.
-
-- **Role:** Frontend Developer & Startup Founder
-- **Current Project:** Sleek – a platform for developers to share and collaborate on code snippets.
-
----
-
-## 🌟 Features
-
-- **Responsive Design:** Fully responsive layout for all devices.
-- **Hero Section:** Introduction and quick links to contact and GitHub.
-- **About Me:** Background, experience, and current focus.
-- **Skills:** Visual representation of proficiency in HTML, CSS, JavaScript, and Git/GitHub.
-- **Contact Form:** Easy way to reach out for collaboration or inquiries.
-- **Footer:** Social media and contact links.
+- Responsive layout with mobile hamburger menu (visible at ≤768px).
+- Animated skill progress bars (fixed to update all bars via `data-width`).
+- Clean, semantic HTML and accessibility-minded links.
+- Security headers applied via `vercel.json`:
+  - X-Content-Type-Options: nosniff
+  - X-Frame-Options: DENY
+  - X-XSS-Protection: 1; mode=block
+  - Cache-Control (long-lived for static assets)
+- Optional Vercel Speed Insights script.
+- Minified production assets supported (`style.min.css`, `script.min.js`).
 
 ---
 
-## 🛠️ Tech Stack
+## Tech stack
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
-- **Font Awesome** for icons
-
----
-
-## 📂 Project Structure
-pft.html # Main portfolio HTML file style.css # Custom styles script.js # JavaScript for interactivity img/ # Images and assets README.md # Project documentation robots.txt # Crawler directives sp.ico # Favicon .vscode/ # VSCode settings 
-
+- HTML5, CSS3, Vanilla JavaScript
+- AOS for scroll animations
+- Font Awesome for icons
+- Vercel for hosting
 
 ---
 
-## 📸 Screenshots
+## Project structure
 
-![Portfolio Screenshot](img/Norton.jpg)
+```
+/index.html
+/style.css           # source
+/style.min.css       # production (minified)
+script.js            # source
+script.min.js        # production (minified)
+/vercel.json         # rewrites & security headers
+/robots.txt
+/img/                # assets
+README.md
+LICENSE
+```
+
+## Speed Insights (optional)
+
+1. Enable Speed Insights in the Vercel project dashboard.
+2. Add before `</body>` in `index.html`:
+
+```html
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+```
+
+## SEO & Robots
+
+- Canonical (in `<head>`): update to your live domain
+
+```html
+<link rel="canonical" href="https://fasasi-portfolio.vercel.app/" />
+```
+
+- Meta description: keep 100–320 characters.
+- robots.txt: include sitemap URL
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://fasasi-portfolio.vercel.app/sitemap.xml
+```
 
 ---
 
-## 📬 Contact
+## UI / Code fixes included
 
-- **Email:** gcah4451@gmail.com
-- **GitHub:** [rtobdowu-570](https://github.com/rtobdowu-570)
-- **LinkedIn:** [Fasasi Pamilerin](https://www.linkedin.com/in/fasasi-pamilerin-7a4079346/)
-- **Twitter:** [@AndrewPete38959](https://x.com/AndrewPete38959)
-- **WhatsApp:** [+2348038786290](https://wa.me/2348038786290)
-
----
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+- Mobile hamburger menu toggles `.nav-list.active` and closes when:
+  - a nav link is clicked
+  - clicking outside the menu
+- Skill progress bars fixed to read `data-width` for every `.skill-progress`
+- Typewriter bug fixed (use `this.isDeleting`)
 
 ---
 
-> © 2025 Fasasi Pamilerin. All rights reserved.
+## Contact
+
+- Email: <gcah4451@gmail.com>
+- GitHub: <https://github.com/rtobdowu-570>
+- LinkedIn: <https://www.linkedin.com/in/fasasi-pamilerin-7a4079346/>
+
+---
