@@ -1,71 +1,115 @@
 "use strict";
 
-// Function to get color based on proficiency
-function getProficiencyColor(proficiency) {
-  if (proficiency >= 80) return '#10b981'; // Green for high proficiency
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  if (proficiency >= 60) return '#f59e0b'; // Yellow for medium proficiency
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  return '#ef4444'; // Red for low proficiency
-} // Function to animate skill bars
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var Typewriter =
+/*#__PURE__*/
+function () {
+  function Typewriter(txtElement, words) {
+    var wait = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3000;
 
-function animateSkillBars() {
-  var skillBars = document.querySelectorAll('.skill-progress');
-  skillBars.forEach(function (progress) {
-    var proficiency = parseInt(progress.getAttribute('data-width'));
-    var targetWidth = proficiency + '%'; // Set initial state
+    _classCallCheck(this, Typewriter);
 
-    progress.style.width = '0%';
-    progress.style.backgroundColor = getProficiencyColor(proficiency); // Animate after a short delay
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  }
 
-    setTimeout(function () {
-      progress.style.width = targetWidth;
-    }, 100);
-  });
-} // Initialize animations when DOM is loaded
+  _createClass(Typewriter, [{
+    key: "type",
+    value: function type() {
+      var _this = this;
 
+      // get current word index 
+      var current = this.wordIndex % this.words.length; // get full word length
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Animate skill bars
-  animateSkillBars(); // Optional: Re-animate when skills section comes into view
+      var fullTxt = this.words[current]; //check if is deleting 
 
-  var skillsSection = document.querySelector('#skills');
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        animateSkillBars();
+      if (this.isDeleting) {
+        //remove char
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
       }
-    });
-  }, {
-    threshold: 0.2
-  });
 
-  if (skillsSection) {
-    observer.observe(skillsSection);
+      if (!this.isDeleting) {
+        // add char 
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      } // insert txt into element
+
+
+      this.txtElement.innerHTML = "<span class=\"text\">".concat(this.txt, "</span>"); // initial speed 
+
+      var typeSpeed = 300; // if deleting
+
+      if (this.isDeleting) {
+        typeSpeed /= 2;
+      } // check if word is complete 
+
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        // pause at end 
+        typeSpeed = this.wait;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false; //move to next word 
+
+        this.wordIndex++; // pause before start typing 
+
+        typeSpeed = 500;
+      }
+
+      setTimeout(function () {
+        return _this.type();
+      }, typeSpeed);
+    }
+  }]);
+
+  return Typewriter;
+}();
+
+var ProgressBar =
+/*#__PURE__*/
+function () {
+  function ProgressBar() {
+    _classCallCheck(this, ProgressBar);
+
+    this.progress = document.querySelectorAll('.skill-progress');
+    this.initializeWidth();
   }
-}); // Toggle navigation on mobile screen
 
-var menu = document.querySelector('.menu-toggle');
-var navList = document.querySelector('.nav-list'); // Close nav when a link is clicked or when clicking outside the nav
+  _createClass(ProgressBar, [{
+    key: "initializeWidth",
+    value: function initializeWidth() {
+      this.progress.forEach(function (progress) {
+        // get width
+        var width = progress.getAttribute('data-width'); // set width 
 
-function closeNav() {
-  navList.classList.remove('active');
+        progress.style.width = "".concat(width, "%"); // set color 
+
+        progress.style.background = 'linear-gradient(to right, var(--color-primary), var(--color-secondary))';
+      });
+    }
+  }]);
+
+  return ProgressBar;
+}(); // Event listeners
+
+
+document.addEventListener('DOMContentLoaded', init);
+
+function init() {
+  var txtElement = document.querySelector('.text');
+  var words = JSON.parse(txtElement.getAttribute('data-words'));
+  var wait = txtElement.getAttribute('data-wait');
+  new Typewriter(txtElement, words, wait); // initialize progress bar
+
+  new ProgressBar();
 }
-
-menu.addEventListener('click', function (e) {
-  e.stopPropagation(); // Prevent body click from firing
-
-  navList.classList.toggle('active');
-}); // Close menu when a nav link is clicked
-
-navList.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', closeNav);
-}); // Close menu when clicking outside nav/menu
-
-document.body.addEventListener('click', function (e) {
-  if (navList.classList.contains('active') && !navList.contains(e.target) && !menu.contains(e.target)) {
-    closeNav();
-  }
-});
 //# sourceMappingURL=script.dev.js.map

@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "minify:js": "uglifyjs script.js -o script.min.js -c -m",
-    "minify:css": "cleancss -o style.min.css style.css"
-  }
-}

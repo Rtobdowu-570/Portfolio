@@ -6,213 +6,209 @@
     <meta name="description" content="Explore the portfolio of Fasasi Pamilerin, a frontend developer and startup founder. Discover projects, coding skills, and the Sleek platform for code sharing. Let's collaborate on innovative web solutions!" />
     <title>My Portfolio</title>
     <link rel="canonical" href="https://fasasi-portfolio.vercel.app/" />
-    <link rel="stylesheet" href="/style.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/sp.ico" type="image/x-icon" />
-    <script src="script.min.js" defer></script>
+    <link rel="icon" href="/assets/sp.ico" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js" defer></script>
   </head>
   <body>
-    <div class="radial-gradient-bg"></div>
-    <div class="particles-container" id="particles"></div>
-    <header class="header" id="header">
-      <nav class="nav-bar">
-        <h1 class="logo">PAIN_!X.dev</h1>
-        <button class="menu-toggle" type="button" aria-label="Open Menu">
-        <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-list">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero" id="hero">
-      <img src="/img/Norton.jpg" alt="Hero Image" class="hero-image" />
-      <div class="hero-text">
-        <h2>Frontend Developer & <span class="logo">Aspiring Entrepreneur</span></h2>
-        <p>
-          With 8 months of dedicated coding experience, I'm passionate about crafting 
-          clean, responsive web applications using HTML, CSS, and JavaScript. 
-          Currently working on <strong>Sleek</strong> - an innovative platform 
-          designed to help developers share code snippets and collaborate more effectively. 
-          Always eager to learn new technologies and take on exciting challenges.
-        </p>
-        <div class="hero-buttons">
-          <a
-            href="mailto:gcah4451@gmail.com"
-            class="contact-button"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="window.location.href = 'mailto:gcah4451@gmail.com?subject=Hello&body=I would like to contact you'"
-          >
-            <i class="fas fa-envelope"></i> Contact Me</a
-          >
-          <a
-            href="https://github.com/rtobdowu-570"
-            class="github-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-github"></i> View my Github</a
-          >
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <nav class="nav-bar">
+            <ul class="nav-section" data-aos="fade-in" data-aos-duration="1000">
+              <li class="nav-item"><a href="#about">About</a></li>
+              <li class="nav-item"><a href="#projects">Projects</a></li>
+              <li class="nav-item"><a href="#skills">Skills</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-      </div>
-    </section>
+      </header>
 
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text" id="about-text">
-            <h3>Developer & Innovator</h3>
-            <p>
-              I'm a passionate frontend developer with 8 months of hands-on experience 
-              building responsive, accessible web applications. My skill set focuses on 
-              modern JavaScript ES6+, CSS Grid & Flexbox, and semantic HTML5 practices.
-            </p>
-            <p class="current-project">
-              Currently developing <strong>Sleek</strong>, an ambitious project aimed at 
-              transforming how developers share and discover code snippets. This platform 
-              represents my journey from learning fundamentals to creating real-world 
-              solutions that can impact the developer community.
-            </p>
-            <div class="badges">
-              <span class="badge">Quick Learner</span>
-              <span class="badge">Detail-Oriented</span>
-              <span class="badge">Growth Mindset</span>
-              <span class="badge">Future Entrepreneur</span>
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <div class="hero-texts" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Hi, I'm Pamilerin</h1>
+            <p class="hero-text">A<span class="text" data-wait="3000" data-words='["FrontEnd-Developer","Video Editor"]'></span> <span class="cursor"></span></p>
+            <p class="hero-subtitle">I design, build and develop innovative web solutions</p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn primary">View Projects <i class="fas fa-arrow-right"></i></a>
+              <a href="#contact" class="btn secondary">Contact Me</a>
             </div>
           </div>
-          <div class="stats-grid" id="stats-grid">
-            <div class="stats-card">
-              <i class="fas fa-code"></i>
-              <h4>20+</h4>
-              <p>Projects Completed</p>
-            </div>
-            <div class="stats-card">
-              <i class="fas fa-palette"></i>
-              <h4>8</h4>
-              <p>Months Experience</p>
-            </div>
-            <div class="stats-card">
-              <i class="fas fa-bolt"></i>
-              <h4>30+</h4>
-              <p>Repositories</p>
-            </div>
-            <div class="stats-card">
-              <i class="fab fa-github"></i>
-              <h4>10+</h4>
-              <p>GitHub Stars</p>
-            </div>
+
+          <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <img src="/img/undefined.jpeg" alt="Pamilerin's profile picture" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-
-        <div class="skills-grid" id="skills-grid">
-          <div class="skill-card">
-            <h3><i class="fab fa-html5"></i> HTML</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90"></div>
+      <main class="main-content">
+        <section id="about" class="about-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-in-out">
+          <h2>About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <h3>Developer & Innovator</h3>
+              <p>
+                I'm a passionate frontend developer with a knack for creating engaging and 
+                user-friendly web applications. 
+                With experience in HTML, CSS, JavaScript,
+                I strive to deliver high-quality code and innovative solutions.
+              </p>
+              <div class="badges" data-aos="fade-up" data-aos-duration="1000">
+                <span class="badge">Quick Learner</span>
+                <span class="badge">Detail-Oriented</span>
+                <span class="badge">Growth Mindset</span>
+                <span class="badge">Future Entrepreneur</span>
+              </div>
             </div>
-            <p class="progress-text">90% Proficiency</p>
-          </div>
 
-          <div class="skill-card">
-            <h3><i class="fab fa-css3"></i> CSS</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85"></div>
+            <div class="about-cards">
+              <div class="about-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-palette"></i>
+                <h4>9+</h4>
+                <p>Months of Experience</p>
+              </div>
+              <div class="about-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-code"></i>
+                <h4>10+</h4>
+                <p>Projects Completed</p>
+              </div>
+              <div class="about-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-bolt"></i>
+                <h4>30+</h4>
+                <p>Repositories</p>
+              </div>
+              <div class="about-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-users"></i>
+                <h4>1</h4>
+                <p>Collaboration</p>
+              </div>
             </div>
-            <p class="progress-text">85% Proficiency</p>
           </div>
+        </section>
 
-          <div class="skill-card">
-            <h3><i class="fab fa-js"></i> JavaScript</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="60"></div>
-            </div>
-            <p class="progress-text">60% Proficiency</p>
-          </div>
+        <section id="skills" class="skills-section">
+          <div class="skill-container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-card html" data-aos="flip-left" data-aos-delay="100">
+                <h3><i class="fab fa-html5"></i> HTML</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90%"></div>
+                </div>
+                <p class="progress-text">90% Proficiency</p>
+              </div>
 
-          <div class="skill-card">
-            <h3><i class="fab fa-github"></i> Git & GitHub</h3>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75"></div>
+              <div class="skill-card css" data-aos="flip-left" data-aos-delay="200">
+                <h3><i class="fab fa-css3"></i> CSS</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85%"></div>
+                </div>
+                <p class="progress-text">85% Proficiency</p>
+              </div>
+
+              <div class="skill-card js" data-aos="flip-left" data-aos-delay="300">
+                <h3><i class="fab fa-js"></i> JavaScript</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="60%"></div>
+                </div>
+                <p class="progress-text">60% Proficiency</p>
+              </div>
+
+              <div class="skill-card git" data-aos="flip-left" data-aos-delay="400">
+                <h3><i class="fab fa-github"></i> Git & GitHub</h3>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="75%"></div>
+                </div>
+                <p class="progress-text">75% Proficiency</p>
+              </div>
             </div>
-            <p class="progress-text">75% Proficiency</p>
           </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+          <h2>Projects</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Here are some of the projects I've worked on:</p>
+          <div class="projects-grid">
+            <div class="project-card" data-aos="slide-up" data-aos-delay="100">
+              <img src="/img/Project1.png" class="project-image" alt="projects"></image>
+              <h3>Task Manager</h3>
+              <p>A task management application that enables users to create, organize, and track their daily tasks.</p>
+              <a href="https://rtobdowu-570.github.io/Todo_List/" class="btn secondary small round">Visit Project</a>
+            </div>
+
+            <div class="project-card" data-aos="slide-up" data-aos-delay="200">
+              <img src="/img/project2.png" class="project-image" alt="projects"></image>
+              <h3> Qr-code Reader</h3>
+              <p>A QR code generator and scanner application that allows users to create QR codes from text (up to 2,953 characters) and scan existing QR codes</p>
+              <a href="https://hash-reader.netlify.app" class="btn secondary small round">Visit Project</a>
+            </div>
+
+            <div class="project-card" data-aos="slide-up" data-aos-delay="300">
+              <img src="/img/project3.png" class="project-image" alt="projects"></image>
+              <h3> Quiz App</h3>
+              <p>An interactive quiz platform where users can test their knowledge across various topics</p>
+              <a href="https://quiz-nov.netlify.app" class="btn secondary small round">Visit Project</a>
+            </div>
+
+            <div class="project-card" data-aos="slide-up" data-aos-delay="400">
+              <img src="/img/project4.png" class="project-image" alt="projects"></image>
+              <h3>Weather App</h3>
+              <p>A weather application that provides real-time weather information</p>
+              <a href="https://exquisite-parfait-20ec91.netlify.app" class="btn secondary small round">Visit Project</a>
+            </div>
+
+            <div class="project-card" data-aos="slide-up" data-aos-delay="500">
+              <img src="/img/collab1.png" class="project-image" alt="collab"></image>
+              <h3>E-commerce App (Team)</h3>
+              <p>A peer-to-peer marketplace platform designed for University of Lagos students to buy and sell textbooks, lab materials, and health essentials.</p>
+              <a href="https://techstars-hackathon-25.vercel.app" class="btn secondary small round">Visit Project</a>
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+      <section id="contact" class="contact-section">
+        <div class="contact-wrapper">
+          <h2  data-aos="fade-down">Let's Connect</h2>
+          <p data-aos="fade-down" data-aos-delay="100" >Interested in collaborating on a project or need a web developer? Don't hesitate to reach out!</p>
+
+          <form data-aos="fade-up" data-aos-delay="200"
+            action="https://formspree.io/f/meokajnq" 
+            method="POST" 
+            class="contact-form" 
+            id="contact-form"
+          >
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="Your full name" required autocomplete="name"/>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="your.email@example.com" required autocomplete="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="6" placeholder="Your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary submit" id="submit" aria-label="Send Message">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Let's Together</h2>
-        <p>
-          Interested in collaborating on a project or learning more about Sleek?
-          I'd love to hear from you!
-        </p>
-
-        <form
-          action="https://formspree.io/f/meokajnq"
-          method="POST"
-          class="contact-form" id="contact-form"
-        >
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your full name"
-              required
-              autocomplete="name"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="your.email@example.com"
-              required
-              autocomplete="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              placeholder="Tell me about your project or just say hello..."
-              required
-            ></textarea>
-          </div>
-          
-          <button type="submit" class="submit-button" id="submit" aria-label="Send Message">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-          <div class="feedback"></div>
-        </form>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer class="footer">
       <div class="footer-content">
@@ -220,41 +216,14 @@
           <p>&copy; 2025 Fasasi Pamilerin. All rights reserved.</p>
         </div>
         <div class="footer-links">
-          <a
-            href="https://github.com/rtobdowu-570"
-            aria-label="GitHub profile"
-            class="footer-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fab fa-github"></i></a>
-          <a
-            href="https://www.linkedin.com/in/fasasi-pamilerin-7a4079346/"
-            aria-label="Linkedin profile"
-            class="footer-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fab fa-linkedin"></i></a>
-          <a
-            href="https://x.com/AndrewPete38959"
-            aria-label="Twitter profile"
-            class="footer-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fab fa-twitter"></i></a>
-          <a
-            href="https://wa.me/2348038786290"
-            aria-label="Whatsapp Contact"
-            class="footer-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/rtobdowu-570" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/fasasi-pamilerin-7a4079346/" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/AndrewPete38959" aria-label="Twitter profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/2348038786290" aria-label="WhatsApp contact" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </footer>
-    <!-- Vercel Speed Insights -->
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
   </body>
+  <script>AOS.init();</script>
 </html>
+
