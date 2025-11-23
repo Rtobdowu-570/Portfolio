@@ -144,6 +144,12 @@ body::after {
   align-items: center;
 }
 
+.aside-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -277,7 +283,6 @@ body::after {
   margin: 40px 0;
 }
 
-/* Updated section headers to h2 */
 .about-section h2,
 .skills-section h2,
 .projects-section h2,
@@ -289,6 +294,45 @@ body::after {
   color: var(--color-primary);
   text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
+.recent-activity {
+  transform: translateY(10%);
+}
+
+.recent-activity p {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  margin-bottom: 50px;
+}
+
+.recent-activity h2{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--color-primary);
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  align-items: center;
+}
+
+.activity-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(236, 72, 153, 0.15);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.015);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.015);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: translateY(20%);
+}
+
 
 .about-section {
   margin: 80px 0 60px;
@@ -305,6 +349,11 @@ body::after {
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .aside-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
@@ -413,7 +462,6 @@ body::after {
   margin: 0;
 }
 
-/* Fixed skills grid to be 4 columns */
 .skills-section {
   margin: 80px 0 60px;
 }
