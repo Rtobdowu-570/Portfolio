@@ -1,6 +1,6 @@
-# Sleek Developer Portfolio
+# Null Portfolio
 
-Personal portfolio for Fasasi Pamilerin — frontend developer & startup founder.  
+Personal portfolio for Fasasi Pamilerin — frontend developer.  
 This repo contains a static HTML/CSS/JS portfolio deployed to Vercel.
 
 ---
