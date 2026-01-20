@@ -15,6 +15,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var _default = (0, _vite.defineConfig)({
   plugins: [(0, _pluginReact["default"])()],
   base: '/',
+  build: {
+    chunkSizeWarningLimit: 1000000
+  },
   server: {
     port: 3000
   }
