@@ -11,9 +11,10 @@ var _pluginReact = _interopRequireDefault(require("@vitejs/plugin-react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// https://vite.dev/config/
+// https://vite.dev
 var _default = (0, _vite.defineConfig)({
   plugins: [(0, _pluginReact["default"])()],
+  base: '/',
   server: {
     port: 3000
   }
