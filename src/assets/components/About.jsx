@@ -28,7 +28,7 @@ const About = () => {
                 <div className="container">
                     <div className="about-text-container">
                         <div className="spline-wrapper">
-                            <Spline scene='/public/scene.splinecode'
+                            <Spline scene='../scene.splinecode'
                              onLoad={() => setIsLoading(false)} />
                         </div>
                         <div className="highlight"></div>
