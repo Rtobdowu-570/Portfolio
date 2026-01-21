@@ -1,5 +1,5 @@
 import React from 'react'
-import  { useState } from 'react';
+import  { useState, Suspense } from 'react';
 import Spline from '@splinetool/react-spline';
 import '../styles/main.css'
 
@@ -28,8 +28,12 @@ const About = () => {
                 <div className="container">
                     <div className="about-text-container">
                         <div className="spline-wrapper">
-                            <Spline scene='/scene.splinecode'
-                             onLoad={() => setIsLoading(false)} />
+                            <Suspense fallback={<div>Loading 3D model...</div>}>
+                                <Spline 
+                                    scene="/scene.splinecode"
+                                    onLoad={() => console.log('Scene loaded!')}
+                                />
+                            </Suspense>
                         </div>
                         <div className="highlight"></div>
                         <div className="about-info" >
