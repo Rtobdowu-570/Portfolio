@@ -74,7 +74,7 @@ const About = () => {
                             <li className="tech-expertise"> Git</li>
                             <li className="tech-expertise"> FrontEnd Development</li>
                             </ul>
-                            <ul className="tech-expertise-list">
+                            <ul className="tech-expertise-list third">
                             <li className="tech-expertise">Optimization</li>
                             <li className="tech-expertise"> Responsive Design</li>
                             <li className="tech-expertise"> Git</li>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {HTML5, CSSNew, JavaScript, React} from './Icons'
+import {FaArrowRight, FaGithub, FaHtml5, FaCss3, FaJs} from 'react-icons/fa';
 import '../styles/main.css';
 
 const Project = () => {
@@ -23,6 +23,11 @@ const Project = () => {
 
     const newRepo = repos.slice(0, 5)
 
+     const handleClick = () => {
+        window.location.href = `${repo.homepage}`;
+     }
+    
+
     return (
         <section className="project-section" id="projects">
             <div className="project-container">
@@ -30,7 +35,7 @@ const Project = () => {
                 
                 <div className="projects-grid">
                     {newRepo.map((repo) => (
-                        <div className="project-card" key={repo.id}>
+                        <div className="project-card" key={repo.id} onClick={handleClick}>
 
                             {/* Preview Images */}
                             <div className="project-preview">
@@ -46,15 +51,20 @@ const Project = () => {
                             {/* Bottom Row: Footer */}
                             <div className="project-footer">
                                 <div className="tech-stack-icons">
-                                    <div className="icon-overlap"> <HTML5 /> </div>
-                                    <div className="icon-overlap"> <CSSNew /></div>
-                                    <div className="icon-overlap"> <JavaScript /> </div>
+                                    <div className="icon-overlap"> <FaHtml5 className='icon' style={{ fill: "#e34c26" }} /> </div>
+                                    <div className="icon-overlap"> <FaCss3  className='icon' style={{ fill: "#264de4"}} /> </div>
+                                    <div className="icon-overlap"> <FaJs  className='icon' style={{ fill: "#f7df1e" }}/> </div>
                                     <span className="language-text"></span>
                                 </div>
                                 
-                                <a href={repo.homepage} className="live-link">
-                                    Check Live Site
+                                <div className="project-link">
+                                    <a href={repo.html_url} className="github-link">
+                                        <FaGithub className="github-icon" />
+                                    </a>
+                                    <a href={repo.homepage} className="live-link">
+                                    Check Live Site <span className="live-icon-container"><FaArrowRight className="live-icon" style={{ fill: "#cbacf9" }} /></span>
                                 </a>
+                                </div>
                             </div>
                         </div>
                     ))}
