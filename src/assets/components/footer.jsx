@@ -20,7 +20,7 @@ const Footer = () => {
                         <a href="https://twitter.com/AndrewPete38959" target="_blank" rel="noopener noreferrer" className="theme-btn" ><FaTwitter className='icon' /></a>
                     </div>
                     <div >
-                        <a href="https://wa.me/2348160126669" target="_blank" rel="noopener noreferrer" className="theme-btn" ><FaWhatsapp  className='icon'/></a>
+                        <a href="https://wa.me/+2348038786290" target="_blank" rel="noopener noreferrer" className="theme-btn" ><FaWhatsapp  className='icon'/></a>
                     </div>
                 </div>
             </div>
