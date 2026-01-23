@@ -30,7 +30,7 @@ const Contact = () => {
                 </li>
 
                 <li className="other-contacts">
-                    <a href="https://github.com/Rtobdowu-570">Phone</a>
+                    <a href="https://wa.mw/+234 803 878 6290">Phone</a>
                     <p>+234 803 878 6290</p>
                 </li>
             </ul>
