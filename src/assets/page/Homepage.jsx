@@ -1,23 +1,34 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import About from '../components/About'
-import Project from '../components/Project'
-import Contact from '../components/contact'
-import Footer from '../components/footer'
-import '../styles/main.css'
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Project from '../components/Project';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
+import '../styles/main.css';
 
 const Homepage = () => {
-  return (
-    <>
-    <div className="portfolio-background">
-    <Navbar />
-    <About />
-    <Project />
-    <Contact />
-    <Footer />
-    </div>
-    </>
-  )
-}
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-export default Homepage
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <div>
+      <Navbar />
+      <Hero mousePos={mousePos} />
+      <About />
+      <Project />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
+
+export default Homepage;
