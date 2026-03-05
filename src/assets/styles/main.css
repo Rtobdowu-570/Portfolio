@@ -248,13 +248,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(8rem, 25vw, 30rem);
+  font-size: clamp(10rem, 30vw, 40rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.08);
+  letter-spacing: -0.03em;
+  color: rgba(128, 128, 128, 0.15);
   white-space: nowrap;
   z-index: 0;
   pointer-events: none;
+  line-height: 1;
 }
 
 .about-left {
@@ -398,6 +399,11 @@ body {
   overflow: hidden;
 }
 
+.project-card:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
 .project-background-text {
   position: absolute;
   bottom: 1rem;
@@ -415,6 +421,10 @@ body {
   max-width: 95%;
   word-wrap: break-word;
   overflow: hidden;
+}
+
+.project-card:hover .project-background-text {
+  color: rgba(0, 0, 0, 0.08);
 }
 
 .project-card > * {
@@ -474,6 +484,10 @@ body {
 }
 
 .project-title-red {
+  color: var(--red);
+}
+
+.project-card:hover .project-title-red {
   color: var(--red);
 }
 
@@ -587,6 +601,29 @@ body {
   background: var(--white);
   border: 4px solid var(--white);
   color: var(--red);
+}
+
+/* Project Card Hover States */
+.project-card:hover .project-icon-link-top {
+  border: 4px solid var(--black);
+  color: var(--black);
+}
+
+.project-card:hover .project-icon-link-top:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.project-card:hover .featured-icon {
+  background: var(--white);
+  border: 4px solid var(--white);
+  color: var(--red);
+}
+
+.project-card:hover .featured-icon:hover {
+  background: var(--red);
+  border: 4px solid var(--red);
+  color: var(--white);
 }
 
 /* Glitch Effect */
