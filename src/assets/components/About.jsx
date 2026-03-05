@@ -25,7 +25,7 @@ const About = () => {
           </div>
           <div className="tech-item tech-item-right">
             <div className="tech-checkbox"></div>
-            <span>TYPESCRIPT</span>
+            <span>JAVASCRIPT</span>
           </div>
           <div className="tech-item tech-item-right">
             <div className="tech-checkbox"></div>
