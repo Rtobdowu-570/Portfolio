@@ -87,8 +87,21 @@ const Project = () => {
           >
             <div className="project-background-text">{project.title}</div>
             
-            <div>
+            <div className="project-header">
               <div className="project-index">{project.id}</div>
+              <div className="project-icons-top">
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-icon-link-top">
+                    <IoOpenOutline size={20} />
+                  </a>
+                )}
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className={`project-icon-link-top ${project.featured ? 'featured-icon' : ''}`}>
+                  <FaGithub size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div className="project-content">
               <div className={`project-title ${project.featured ? 'project-title-red' : ''}`}>
                 {project.title}
               </div>
@@ -97,23 +110,13 @@ const Project = () => {
               </div>
             </div>
 
-            <div>
+            <div className="project-footer">
               <div className="project-tech">
                 {project.technologies.map((tech, idx) => (
                   <div className="project-tech-badge" key={idx}>
                     {tech}
                   </div>
                 ))}
-              </div>
-              <div className="project-icons">
-                {project.live && (
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-icon-link">
-                    <IoOpenOutline size={20} />
-                  </a>
-                )}
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-icon-link">
-                  <FaGithub size={20} />
-                </a>
               </div>
             </div>
           </div>

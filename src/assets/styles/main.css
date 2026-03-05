@@ -400,19 +400,19 @@ body {
 
 .project-background-text {
   position: absolute;
-  top: 50%;
+  bottom: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(1.5rem, 8vw, 4rem);
+  transform: translateX(-50%);
+  font-size: clamp(2rem, 12vw, 6rem);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.08);
   white-space: nowrap;
   z-index: 0;
   pointer-events: none;
   text-align: center;
   width: 100%;
-  max-width: 90%;
+  max-width: 95%;
   word-wrap: break-word;
   overflow: hidden;
 }
@@ -420,6 +420,21 @@ body {
 .project-card > * {
   position: relative;
   z-index: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  flex-grow: 1;
+}
+
+.project-footer {
+  margin-top: auto;
 }
 
 .project-card:hover {
@@ -533,6 +548,45 @@ body {
 
 .project-icon-link svg {
   display: flex;
+}
+
+.project-icons-top {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-icon-link-top {
+  width: 2rem;
+  height: 2rem;
+  border: 4px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  text-decoration: none;
+  transition: none;
+}
+
+.project-icon-link-top:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.project-icon-link-top svg {
+  display: flex;
+}
+
+.featured-icon {
+  background: var(--red);
+  border: 4px solid var(--red);
+  color: var(--white);
+}
+
+.featured-icon:hover {
+  background: var(--white);
+  border: 4px solid var(--white);
+  color: var(--red);
 }
 
 /* Glitch Effect */
