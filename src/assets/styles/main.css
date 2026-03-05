@@ -646,69 +646,114 @@ body {
 .contact {
   background: var(--red);
   color: var(--white);
-  padding: 6rem 2rem;
+  padding: 4rem 3rem 2rem;
   border-bottom: 4px solid var(--white);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   min-height: 50vh;
 }
 
-.contact-content {
+.contact-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   flex: 1;
 }
 
-.contact-label {
-  font-size: 4rem;
+.contact-left {
+  flex: 1;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.contact-heading {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.contact-label-num {
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
-  margin-bottom: 1rem;
+  font-style: italic;
+  display: block;
+  line-height: 0.8;
   letter-spacing: 0.05em;
+}
+
+.contact-label-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .contact-text {
   font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  letter-spacing: 0.01em;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+
+.contact-bottom {
+  margin-top: auto;
 }
 
 .contact-line {
   width: 100%;
   height: 4px;
   background: var(--white);
-  margin: 2rem 0;
+  margin: 2rem 0 1.5rem;
 }
 
 .contact-cta {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
-  text-decoration: underline;
   cursor: pointer;
   transition: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 4px solid var(--white);
+  padding-bottom: 0.5rem;
+  color: var(--white);
 }
 
 .contact-cta:hover {
-  text-decoration: none;
+  background: var(--white);
+  color: var(--red);
+  border-bottom: 4px solid var(--white);
+  padding: 0.5rem 1rem 0.5rem;
+}
+
+.contact-cta-text {
+  font-weight: 700;
+}
+
+.contact-cta-arrow {
+  font-size: 1.5rem;
 }
 
 .contact-meta {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  margin-top: 2rem;
   letter-spacing: 0.05em;
 }
 
 .contact-icons {
   display: flex;
   gap: 1rem;
-  margin-top: auto;
 }
 
 .contact-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   border: 4px solid var(--white);
   display: flex;
   align-items: center;
@@ -717,14 +762,17 @@ body {
   background: transparent;
   color: var(--white);
   position: relative;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  transition: none;
 }
 
 .contact-icon:hover {
-  background: var(--white);
-  color: var(--red);
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.contact-icon svg {
+  display: flex;
 }
 
 .icon-tooltip {
@@ -872,12 +920,16 @@ body {
     font-size: clamp(2rem, 8vw, 8rem);
   }
 
-  .contact {
+  .contact-top {
     flex-direction: column;
-    text-align: center;
+    gap: 2rem;
   }
 
-  .contact-label {
+  .contact-right {
+    align-items: flex-start;
+  }
+
+  .contact-label-title {
     font-size: 2.5rem;
   }
 

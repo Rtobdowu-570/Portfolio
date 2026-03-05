@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
+import { IoOpenOutline } from 'react-icons/io5';
 
 const Contact = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -16,54 +17,63 @@ const Contact = () => {
       icon: FaGithub
     },
     {
-      id: 'x',
-      name: 'X',
+      id: 'portfolio',
+      name: 'PORTFOLIO',
       url: 'https://x.com/AndrewPete38959',
-      icon: FaXTwitter
+      icon: IoOpenOutline
     }
   ];
 
   return (
     <section className="contact" id="contact">
-      <div className="contact-content">
-        <div className="contact-label">03//</div>
-        <div className="contact-label">CONTACT</div>
-        <div className="contact-text">
-          AVAILABLE FOR COLLABORATION, DESTRUCTION, AND CREATION.
+      <div className="contact-top">
+        <div className="contact-left">
+          <div className="contact-heading">
+            <span className="contact-label-num">03//</span>
+            <span className="contact-label-title">CONTACT_</span>
+          </div>
+          <div className="contact-text">
+            AVAILABLE FOR COLLABORATION,<br />
+            DESTRUCTION, AND CREATION.
+          </div>
         </div>
+
+        <div className="contact-right">
+          <div className="contact-cta" onClick={handleEmailClick}>
+            <span className="contact-cta-text">EMAIL ME</span>
+            <span className="contact-cta-arrow">→</span>
+          </div>
+          <div className="contact-icons">
+            {socialLinks.map((link) => {
+              const IconComponent = link.icon;
+              return (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  className="contact-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={() => setHoveredIcon(link.id)}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                  title={link.name}
+                >
+                  <IconComponent size={28} />
+                  {hoveredIcon === link.id && (
+                    <span className="icon-tooltip">{link.name}</span>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-bottom">
         <div className="contact-line"></div>
         <div className="contact-meta">
           <span>© 2026 SLEEK // NULL // ALL RIGHTS RESERVED</span>
           <span>DESIGNED TO BE BROKEN</span>
           <span>■ SYSTEM_STATUS: NOMINAL</span>
-        </div>
-      </div>
-
-      <div>
-        <div className="contact-cta" onClick={handleEmailClick} style={{ cursor: 'pointer' }}>
-          EMAIL ME →
-        </div>
-        <div className="contact-icons">
-          {socialLinks.map((link) => {
-            const IconComponent = link.icon;
-            return (
-              <a
-                key={link.id}
-                href={link.url}
-                className="contact-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={() => setHoveredIcon(link.id)}
-                onMouseLeave={() => setHoveredIcon(null)}
-                title={link.name}
-              >
-                <IconComponent size={24} />
-                {hoveredIcon === link.id && (
-                  <span className="icon-tooltip">{link.name}</span>
-                )}
-              </a>
-            );
-          })}
         </div>
       </div>
     </section>
