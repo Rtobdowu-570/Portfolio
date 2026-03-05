@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Hero = ({ mousePos }) => {
-  const [displayPos, setDisplayPos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    setDisplayPos(mousePos);
-  }, [mousePos]);
-
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero-version">
         VERSION_4.6.0<br />
         STABLE_BUILD
@@ -32,10 +26,6 @@ const Hero = ({ mousePos }) => {
         <div className="hero-description">
           SCROLL TO EXPLORE →
         </div>
-      </div>
-
-      <div className="mouse-tracker">
-        X: {String(Math.round(displayPos.x)).padStart(4, '0')} Y: {String(Math.round(displayPos.y)).padStart(3, '0')} // SLEEK_v4
       </div>
     </section>
   );

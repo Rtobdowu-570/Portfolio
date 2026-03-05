@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
   const handleEmailClick = () => {
     window.location.href = 'mailto:gcah4451@gmail.com';
   };
+
+  const socialLinks = [
+    {
+      id: 'github',
+      name: 'GITHUB',
+      url: 'https://github.com/Rtobdowu-570',
+      icon: '⅁'
+    },
+    {
+      id: 'x',
+      name: 'X',
+      url: 'https://x.com/AndrewPete38959',
+      icon: '✕'
+    }
+  ];
 
   return (
     <section className="contact" id="contact">
@@ -26,12 +43,23 @@ const Contact = () => {
           EMAIL ME →
         </div>
         <div className="contact-icons">
-          <a href="https://github.com/Rtobdowu-570" className="contact-icon" target="_blank" rel="noopener noreferrer">
-            GH
-          </a>
-          <a href="https://x.com/AndrewPete38959" className="contact-icon" target="_blank" rel="noopener noreferrer">
-            X
-          </a>
+          {socialLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.url}
+              className="contact-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseEnter={() => setHoveredIcon(link.id)}
+              onMouseLeave={() => setHoveredIcon(null)}
+              title={link.name}
+            >
+              {link.icon}
+              {hoveredIcon === link.id && (
+                <span className="icon-tooltip">{link.name}</span>
+              )}
+            </a>
+          ))}
         </div>
       </div>
     </section>
