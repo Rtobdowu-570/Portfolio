@@ -3,6 +3,8 @@ import React from 'react';
 const About = () => {
   return (
     <section className="about" id="about">
+      <div className="about-background-text">NULL</div>
+      
       <div className="about-left">
         <div className="about-label about-label-left">01//</div>
         <div className="about-label about-label-left">ABOUT</div>

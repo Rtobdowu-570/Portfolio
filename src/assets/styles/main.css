@@ -201,6 +201,22 @@ body {
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
   border-bottom: 4px solid var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(8rem, 25vw, 30rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .about-left {
@@ -210,6 +226,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .about-right {
@@ -219,6 +237,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .about-label {
@@ -337,6 +357,31 @@ body {
   justify-content: space-between;
   position: relative;
   transition: none;
+  overflow: hidden;
+}
+
+.project-background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.5rem, 8vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .project-card:hover {

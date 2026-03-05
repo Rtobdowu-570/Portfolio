@@ -71,6 +71,8 @@ const Project = () => {
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={handleCardLeave}
           >
+            <div className="project-background-text">{project.title}</div>
+            
             <div>
               <div className="project-index">{project.id}</div>
               <div className={`project-title ${project.featured ? 'project-title-red' : ''}`}>
