@@ -18,9 +18,14 @@ const Hero = ({ mousePos }) => {
           "NOTHING MUCH"
         </div>
 
-        <div className="hero-meta">
-          <div className="hero-meta-line"></div>
-          <div className="hero-status">SYSTEM_READY</div>
+        <div className="hero-info-block">
+          <div className="hero-divider"></div>
+          <div className="hero-info-text">DEV / DESIGNER / NULL</div>
+        </div>
+
+        <div className="hero-status-block">
+          <div className="hero-status-indicator">></div>
+          <div className="hero-status">SYSTEM_READY_</div>
         </div>
 
         <div className="hero-description">
