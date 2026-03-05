@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 const Contact = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -12,13 +13,13 @@ const Contact = () => {
       id: 'github',
       name: 'GITHUB',
       url: 'https://github.com/Rtobdowu-570',
-      icon: '⅁'
+      icon: FaGithub
     },
     {
       id: 'x',
       name: 'X',
       url: 'https://x.com/AndrewPete38959',
-      icon: '✕'
+      icon: FaXTwitter
     }
   ];
 
@@ -43,23 +44,26 @@ const Contact = () => {
           EMAIL ME →
         </div>
         <div className="contact-icons">
-          {socialLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.url}
-              className="contact-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => setHoveredIcon(link.id)}
-              onMouseLeave={() => setHoveredIcon(null)}
-              title={link.name}
-            >
-              {link.icon}
-              {hoveredIcon === link.id && (
-                <span className="icon-tooltip">{link.name}</span>
-              )}
-            </a>
-          ))}
+          {socialLinks.map((link) => {
+            const IconComponent = link.icon;
+            return (
+              <a
+                key={link.id}
+                href={link.url}
+                className="contact-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => setHoveredIcon(link.id)}
+                onMouseLeave={() => setHoveredIcon(null)}
+                title={link.name}
+              >
+                <IconComponent size={24} />
+                {hoveredIcon === link.id && (
+                  <span className="icon-tooltip">{link.name}</span>
+                )}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
