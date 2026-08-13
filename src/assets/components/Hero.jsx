@@ -1,39 +1,36 @@
-import React from 'react';
-
-const Hero = ({ mousePos }) => {
+const Hero = () => {
   return (
-    <section className="hero" id="hero">
-      <div className="hero-version">
+    <section className="hero" id="hero" aria-labelledby="hero-title">
+      <div className="hero-version" aria-label="Portfolio version">
         VERSION_4.6.0<br />
         STABLE_BUILD
       </div>
 
       <div className="hero-content">
-        <div className="hero-title">
-          <div className="hero-title-white">SLEEK</div>
-          <div className="hero-title-red">NULL</div>
+        <p className="eyebrow">FRONTEND DEVELOPER / DIGITAL MAKER</p>
+        <h1 className="hero-title" id="hero-title">
+          <span className="hero-title-white">SLEEK</span>
+          <span className="hero-title-red">NULL</span>
+        </h1>
+        <p className="hero-subtitle">Nothing much. Just useful things for the web.</p>
+
+        <div className="hero-info-block" aria-label="Current status">
+          <span className="hero-divider" aria-hidden="true"></span>
+          <span className="hero-info-text">REACT / JAVASCRIPT / UI</span>
         </div>
 
-        <div className="hero-subtitle">
-          "NOTHING MUCH"
-        </div>
+        <p className="hero-status-block">
+          <span className="hero-status-indicator" aria-hidden="true">&gt;</span>
+          <span className="hero-status">SYSTEM_READY_</span>
+        </p>
 
-        <div className="hero-info-block">
-          <div className="hero-divider"></div>
-          <div className="hero-info-text">DEV / DESIGNER / NULL</div>
-        </div>
-
-        <div className="hero-status-block">
-          <div className="hero-status-indicator">></div>
-          <div className="hero-status">SYSTEM_READY_</div>
-        </div>
-
-        <div className="hero-description">
-          SCROLL TO EXPLORE →
+        <div className="hero-actions">
+          <a className="button button-primary" href="#projects">Explore selected work <span aria-hidden="true">↓</span></a>
+          <a className="button button-secondary" href="mailto:gcah4451@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

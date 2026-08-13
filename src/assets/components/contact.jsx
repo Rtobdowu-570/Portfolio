@@ -1,83 +1,56 @@
-import React, { useState } from 'react';
-import { FaGithub } from 'react-icons/fa6';
-import { IoOpenOutline } from 'react-icons/io5';
+import { createElement } from 'react'
+import { FaGithub, FaXTwitter } from 'react-icons/fa6'
+
+const socialLinks = [
+  {
+    id: 'github',
+    name: 'GITHUB',
+    url: 'https://github.com/Rtobdowu-570',
+    icon: FaGithub,
+  },
+  {
+    id: 'x',
+    name: 'X',
+    url: 'https://x.com/AndrewPete38959',
+    icon: FaXTwitter,
+  },
+]
 
 const Contact = () => {
-  const [hoveredIcon, setHoveredIcon] = useState(null);
-
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:gcah4451@gmail.com';
-  };
-
-  const socialLinks = [
-    {
-      id: 'github',
-      name: 'GITHUB',
-      url: 'https://github.com/Rtobdowu-570',
-      icon: FaGithub
-    },
-    {
-      id: 'portfolio',
-      name: 'PORTFOLIO',
-      url: 'https://x.com/AndrewPete38959',
-      icon: IoOpenOutline
-    }
-  ];
-
   return (
-    <section className="contact" id="contact">
+    <section className="contact" id="contact" aria-labelledby="contact-title">
       <div className="contact-top">
         <div className="contact-left">
-          <div className="contact-heading">
-            <span className="contact-label-num">03//</span>
-            <span className="contact-label-title">CONTACT_</span>
-          </div>
-          <div className="contact-text">
-            AVAILABLE FOR COLLABORATION,<br />
-            DESTRUCTION, AND CREATION.
-          </div>
+          <p className="section-index">03// CONTACT</p>
+          <h2 className="contact-label-title" id="contact-title">Have a useful idea?</h2>
+          <p className="contact-text">Available for frontend opportunities, collaborations, and experiments that deserve a good interface.</p>
         </div>
 
         <div className="contact-right">
-          <div className="contact-cta" onClick={handleEmailClick}>
+          <a className="contact-cta" href="mailto:gcah4451@gmail.com">
             <span className="contact-cta-text">EMAIL ME</span>
-            <span className="contact-cta-arrow">→</span>
-          </div>
+            <span className="contact-cta-arrow" aria-hidden="true">↗</span>
+          </a>
           <div className="contact-icons">
-            {socialLinks.map((link) => {
-              const IconComponent = link.icon;
-              return (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  className="contact-icon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onMouseEnter={() => setHoveredIcon(link.id)}
-                  onMouseLeave={() => setHoveredIcon(null)}
-                  title={link.name}
-                >
-                  <IconComponent size={28} />
-                  {hoveredIcon === link.id && (
-                    <span className="icon-tooltip">{link.name}</span>
-                  )}
-                </a>
-              );
-            })}
+            {socialLinks.map(({ id, name, url, icon: SocialIcon }) => (
+              <a key={id} href={url} className="contact-icon" target="_blank" rel="noopener noreferrer" aria-label={`Open ${name}`}>
+                {createElement(SocialIcon, { 'aria-hidden': true, size: 24 })}
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
       <div className="contact-bottom">
-        <div className="contact-line"></div>
+        <div className="contact-line" aria-hidden="true"></div>
         <div className="contact-meta">
-          <span>© 2026 SLEEK // NULL // ALL RIGHTS RESERVED</span>
-          <span>DESIGNED TO BE BROKEN</span>
-          <span>■ SYSTEM_STATUS: NOMINAL</span>
+          <span>© {new Date().getFullYear()} SLEEK // NULL</span>
+          <span>DESIGNED TO BE USEFUL</span>
+          <span><span className="status-dot" aria-hidden="true">■</span> SYSTEM_STATUS: NOMINAL</span>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

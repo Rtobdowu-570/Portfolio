@@ -1,11 +1,5 @@
-import React from 'react';
-
 const Footer = () => {
-  return (
-    <footer className="footer">
-      INIT // TERM // NULL
-    </footer>
-  );
-};
+  return <footer className="footer">INIT // TERM // NULL</footer>
+}
 
-export default Footer;
+export default Footer
