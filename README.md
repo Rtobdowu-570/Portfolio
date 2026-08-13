@@ -1,16 +1,47 @@
-# React + Vite
+# SLEEK // NULL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive brutalist portfolio for Null, a frontend developer based in Nigeria. The site presents selected public projects, current tools, and contact links in a focused single-page experience.
 
-Currently, two official plugins are available:
+## Built with
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 6
+- JavaScript
+- Custom CSS
+- React Icons
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The development server is available at `http://localhost:5173`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Verify a production build
+
+```bash
+npm run lint
+npm run build
+```
+
+## Project structure
+
+```text
+src/
+├── assets/
+│   ├── components/     # Page sections and reusable UI pieces
+│   ├── page/           # Page composition
+│   └── styles/         # Global portfolio styles
+├── App.jsx
+└── main.jsx
+```
+
+## Deployment
+
+The project is configured for Vercel with `vercel.json`. The production build output is generated in `dist/` and is intentionally ignored by Git.
+
+## Content notes
+
+Project descriptions and links are based on the public repositories listed in the portfolio. Add more detail to a project card only when the underlying project supports it; do not add unverified metrics or outcomes.
